@@ -1,0 +1,7 @@
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe.config
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.pdb
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csprojAssemblyReference.cache
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.exe
+C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.pdb
