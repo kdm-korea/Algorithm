@@ -5,3 +5,10 @@ C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\
 C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csproj.CoreCompileInputs.cache
 C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.exe
 C:\Users\SWC_EquimentWorker\Desktop\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.pdb
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe.config
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.pdb
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csprojAssemblyReference.cache
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csproj.CoreCompileInputs.cache
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.exe
+D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.pdb
