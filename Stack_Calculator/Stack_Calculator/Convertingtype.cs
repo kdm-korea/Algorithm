@@ -8,55 +8,44 @@ namespace Stack_Calculator
         private Stack<string> operate = new Stack<string>();
         private List<string> array = new List<string>();
 
-        private void PopOperator(StringBuilder currentData, int operKind, string oper) {
-            if (!currentData.ToString().Length.Equals(0)) {
-                array.Add(currentData.ToString());
-                currentData.Clear();
+        public List<string> ConvertPostfix(string formula) {
+            int operKind;
+            StringBuilder currentData = new StringBuilder();
+
+            ClearMemory();
+            for (int idx = 0; idx < formula.Length; idx++) {
+
+                operKind = Sign.OperatorPriority(formula[idx].ToString());
+                if (operKind == Sign.NotOperator) {
+                    currentData.Append(formula[idx]);
+                }
+                else {
+                    PopOperator(currentData, operKind, formula[idx].ToString());
+                }
             }
+            NotEmptyCurrentData(currentData);
+            PopOperatorStack();
+
+            return array;
+        }
+
+        private void PopOperator(StringBuilder currentData, int operKind, string oper) {
+            NotEmptyCurrentData(currentData);
+
             if (operKind == Sign.EndBracket) {
                 PopOperatorStack();
             }
             else {
                 PopOperatorStack(oper);
+                operate.Push(oper);
             }
-            operate.Push(oper);
-        }
-
-        public List<string> ConvertPostfix(string formula) {
-            int operKind;
-            StringBuilder tmp = new StringBuilder();
-
-            for (int idx = 0; idx < formula.Length; idx++) {
-
-                operKind = OperatorPriority(formula[idx].ToString());
-                if (operKind == Sign.NotOperator) {
-                    tmp.Append(formula[idx]);
-                }
-                else {
-                    PopOperator(tmp, operKind, formula[idx].ToString());
-                }
-            }
-            array.Add(tmp.ToString());
-            array.Add(operate.Peek());
-            operate.Pop();
-
-            return array;
         }
 
         private void PopOperatorStack() {
-            for (int idx = 0; idx < operate.Count; idx++) {
-                if (OperatorPriority(operate.Peek().ToString()) != Sign.StartBracket) {
-                    array.Add(operate.Peek().ToString());
-                }
-                operate.Pop();
-            }
-        }
-
-        private void PopOperatorStack(string oper) {
-            for (int idx = 0; idx < operate.Count; idx++) {
-                if (OperatorPriority(operate.Peek().ToString()) <= OperatorPriority(oper) && OperatorPriority(operate.Peek().ToString()) > Sign.StartBracket) {
-                    array.Add(operate.Peek().ToString());
-                    operate.Pop();
+            int dept = operate.Count;
+            for (int idx = 0; idx < dept; idx++) {
+                if (Sign.OperatorPriority(operate.Peek().ToString()) != Sign.StartBracket) {
+                    array.Add(operate.Pop().ToString());
                 }
                 else {
                     operate.Pop();
@@ -65,23 +54,28 @@ namespace Stack_Calculator
             }
         }
 
-        public int OperatorPriority(string oper) {
-            switch (oper) {
-                case "*":
-                    return 3;
-                case "/":
-                    return 3;
-                case "+":
-                    return 2;
-                case "-":
-                    return 2;
-                case "(":
-                    return 1;
-                case ")":
-                    return 0;
-                default:
-                    return -1;
+        private void PopOperatorStack(string currentOper) {
+            int dept = operate.Count;
+            for (int idx = 0; idx < dept; idx++) {
+                if (Sign.OperatorPriority(operate.Peek().ToString()) < Sign.OperatorPriority(currentOper) || (Sign.OperatorPriority(currentOper.ToString()) == Sign.StartBracket)) {
+                    return;
+                }
+                else {
+                    array.Add(operate.Pop().ToString());
+                }
             }
+        }
+
+        private void NotEmptyCurrentData(StringBuilder currentData) {
+            if (!currentData.ToString().Length.Equals(0)) {
+                array.Add(currentData.ToString());
+                currentData.Clear();
+            }
+        }
+
+        private void ClearMemory() {
+            operate.Clear();
+            array.Clear();
         }
     }
 }
