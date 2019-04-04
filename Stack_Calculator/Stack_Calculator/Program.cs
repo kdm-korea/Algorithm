@@ -10,7 +10,7 @@ namespace Stack_Calculator
             Calculator execute = new Calculator();
             convert = new Convertingtype();
 
-            string formula = "(32+2)*(20/2)+3*4+2";
+            string formula = "(32+2)*(20/2)+3*4+2".Replace(" ","");
 
             Console.WriteLine($"Infix_Formula : {formula}");
 
