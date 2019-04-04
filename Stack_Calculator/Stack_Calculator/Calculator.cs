@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Stack_Calculator
 {
     class Calculator
     {
-        Convertingtype convert;
-
         public double Postfix_Calculator(List<string> formula) {
-            double value = 0.0;
+            double value = 0.0, fst = 0.0, sec = 0.0;
             string op = string.Empty;
-            convert = new Convertingtype();
             Stack<double> number = new Stack<double>();
 
             for (int idx = 0; idx < formula.Count; idx++) {
-                if (convert.OperatorPriority(formula[idx].ToString()) == Sign.NotOperator) {
+                if (Sign.OperatorPriority(formula[idx].ToString()) == Sign.NotOperator) {
                     number.Push(formula[idx].ToString().ParseToDouble());
                 }
                 else {
                     op = formula[idx].ToString();
-                    value = ExecuteCalculator(number.Pop().ToString().ParseToDouble(), number.Pop().ToString().ParseToDouble(), op);
+                    sec = number.Pop().ToString().ParseToDouble();
+                    fst = number.Pop().ToString().ParseToDouble();
+                    value = ExecuteCalculator(fst, sec, op);
                     number.Push(value);
                 }
             }
