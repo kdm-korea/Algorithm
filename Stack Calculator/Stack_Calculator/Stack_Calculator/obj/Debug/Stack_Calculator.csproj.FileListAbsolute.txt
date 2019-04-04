@@ -12,3 +12,10 @@ D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator
 D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csproj.CoreCompileInputs.cache
 D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.exe
 D:\Github\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.pdb
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe.config
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.exe
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\bin\Debug\Stack_Calculator.pdb
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csprojAssemblyReference.cache
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.csproj.CoreCompileInputs.cache
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.exe
+N:\Git\Algorithm\Stack_Calculator\Stack_Calculator\obj\Debug\Stack_Calculator.pdb
