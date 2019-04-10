@@ -6,12 +6,9 @@ namespace CircleQueue
 {
     interface ICircleQueue<T>
     {
-        void Enqueue(T item);
-        void Dequeue();
+        bool Enqueue(T item);
+        bool Dequeue();
         void Clear();
         int Count();
-        T Peek();
-        int Rear();
-        int Front();
     }
 }
