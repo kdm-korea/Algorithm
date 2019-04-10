@@ -67,5 +67,16 @@ namespace CircleQueue
 
         private bool IsOutOfRangeCircleQueue() => (Count() + 1).Equals(queSize) ? true : false;
 
+        public int Count() => (rear >= front) ? (rear - front) : (rear - front + queSize);
+
+        public T this[int index] => circleQueue[index];
+
+        public int Front => this.front;
+
+        public int Rear => this.rear;
+
+        public T Peek => this.circleQueue[peek];
+
+        public int Length => this.queSize;
     }
 }
