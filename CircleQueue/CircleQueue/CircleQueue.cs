@@ -6,42 +6,66 @@ namespace CircleQueue
 {
     class CircleQueue<T> : ICircleQueue<T>
     {
-        private T[] cicleQueue;
+        private T[] circleQueue;
+        private int rear = 0, front = 0, queSize = 0, peek = 0;
 
-        /// <summary>
-        /// 원형큐를 만들때는 큐의 크기가 있어야 합니다.
-        /// </summary>
-        /// <param name="index"></param>
-        public CircleQueue(int index) {
-            cicleQueue = new T[index];
+        public CircleQueue(int size) {
+            this.queSize = size;
+            circleQueue = new T[this.queSize];
         }
 
         public void Clear() {
-            throw new NotImplementedException();
+            for (int idx = 0; idx < circleQueue.Length; idx++) {
+                Pop(idx);
+            }
+            rear = 0;
+            front = 0;
+            queSize = 0;
+            peek = 0;
         }
 
-        public int Count() {
-            throw new NotImplementedException();
+        public bool Dequeue() {
+            if (Pop(front)) {
+                return true;
+            }
+            else {
+                new CustomException("InvalidCastException :: 큐가 비어있습니다.");
+                return false;
+            }
         }
 
-        public void Dequeue() {
-            throw new NotImplementedException();
+        private bool Pop(int item) {
+            if (!item.Equals(rear)) {
+                ReCycleOfMemory(ref front);
+                circleQueue[front] = default(T);
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
-        public void Enqueue(T item) {
-            throw new NotImplementedException();
+        public bool Enqueue(T item) {
+            if (IsOutOfRangeCircleQueue()) {
+                new CustomException("ArgumentOutOfRangeException :: 큐에 공간이 없습니다.");
+                return false;
+            }
+            else {
+                ReCycleOfMemory(ref rear);
+                circleQueue[rear] = item;
+                peek = rear;
+                return true;
+            }
         }
 
-        public int Front() {
-            throw new NotImplementedException();
+        private void ReCycleOfMemory(ref int value) {
+            value++;
+            if ((value % (queSize)).Equals(0)) {
+                value = 0;
+            }
         }
 
-        public T Peek() {
-            throw new NotImplementedException();
-        }
+        private bool IsOutOfRangeCircleQueue() => (Count() + 1).Equals(queSize) ? true : false;
 
-        public int Rear() {
-            throw new NotImplementedException();
-        }
     }
 }
