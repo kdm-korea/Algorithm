@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CircleQueue
+﻿
+namespace Circular_Queue
 {
-    class CircleQueue<T> : ICircleQueue<T>
+    class CircularQueue<T> : ICircularQueue<T>
     {
-        private T[] circleQueue;
+        private T[] circularQueue;
         private int rear = 0, front = 0, queSize = 0, peek = 0;
 
-        public CircleQueue(int size) {
+        public CircularQueue(int size) {
             this.queSize = size;
-            circleQueue = new T[this.queSize];
+            circularQueue = new T[this.queSize];
         }
 
         public void Clear() {
-            for (int idx = 0; idx < circleQueue.Length; idx++) {
-                Pop(idx);
+            for (int idx = 0; idx < circularQueue.Length; idx++) {
+                Remove(idx);
             }
             rear = 0;
             front = 0;
@@ -25,7 +22,7 @@ namespace CircleQueue
         }
 
         public bool Dequeue() {
-            if (Pop(front)) {
+            if (Remove(front)) {
                 return true;
             }
             else {
@@ -34,10 +31,23 @@ namespace CircleQueue
             }
         }
 
-        private bool Pop(int item) {
+        public bool Enqueue(T item) {
+            if (IsOutOfRangeCircularQueue()) {
+                new CustomException("ArgumentOutOfRangeException :: 큐에 공간이 없습니다.");
+                return false;
+            }
+            else {
+                ReCycleOfMemory(ref rear);
+                circularQueue[rear] = item;
+                peek = rear;
+                return true;
+            }
+        }
+
+        private bool Remove(int item) {
             if (!item.Equals(rear)) {
                 ReCycleOfMemory(ref front);
-                circleQueue[front] = default(T);
+                circularQueue[front] = default(T);
                 return true;
             }
             else {
@@ -45,18 +55,9 @@ namespace CircleQueue
             }
         }
 
-        public bool Enqueue(T item) {
-            if (IsOutOfRangeCircleQueue()) {
-                new CustomException("ArgumentOutOfRangeException :: 큐에 공간이 없습니다.");
-                return false;
-            }
-            else {
-                ReCycleOfMemory(ref rear);
-                circleQueue[rear] = item;
-                peek = rear;
-                return true;
-            }
-        }
+        public int Count() => (rear >= front) ? (rear - front) : (rear - front + queSize);
+
+        public T this[int index] => circularQueue[index];
 
         private void ReCycleOfMemory(ref int value) {
             value++;
@@ -65,17 +66,13 @@ namespace CircleQueue
             }
         }
 
-        private bool IsOutOfRangeCircleQueue() => (Count() + 1).Equals(queSize) ? true : false;
-
-        public int Count() => (rear >= front) ? (rear - front) : (rear - front + queSize);
-
-        public T this[int index] => circleQueue[index];
+        private bool IsOutOfRangeCircularQueue() => (Count() + 1).Equals(queSize) ? true : false;
 
         public int Front => this.front;
 
         public int Rear => this.rear;
 
-        public T Peek => this.circleQueue[peek];
+        public T Peek => this.circularQueue[peek];
 
         public int Length => this.queSize;
     }

@@ -1,41 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace CircleQueue
+namespace Circular_Queue
 {
     class Program
     {
-        public static CircleQueue<string> circleQueue;
+        public static CircularQueue<string> circularQueue;
 
         static void Main(string[] args) {
-            circleQueue = new CircleQueue<string>(4);
+            circularQueue = new CircularQueue<string>(4);
 
-            circleQueue.Enqueue("김동민1");
-            circleQueue.Enqueue("김동민2");
-            circleQueue.Enqueue("김동민3");
-            circleQueue.Enqueue("김동민4");
-            PrtQueue("첫번째 출력", circleQueue);
+            circularQueue.Enqueue("김동민1");
+            circularQueue.Enqueue("김동민2");
+            circularQueue.Enqueue("김동민3");
+            circularQueue.Enqueue("김동민4");
+            PrtQueue("첫번째 출력", circularQueue);
 
-            circleQueue.Dequeue();
-            PrtQueue("두번째 출력", circleQueue);
+            circularQueue.Dequeue();
+            PrtQueue("두번째 출력", circularQueue);
 
-            circleQueue.Enqueue("김동민5");
-            PrtQueue("세번째 출력", circleQueue);
+            circularQueue.Enqueue("김동민5");
+            PrtQueue("세번째 출력", circularQueue);
 
-            circleQueue.Dequeue();
-            PrtQueue("네번째 출력", circleQueue);
+            circularQueue.Dequeue();
+            PrtQueue("네번째 출력", circularQueue);
 
-            circleQueue.Enqueue("김동민6");
-            PrtQueue("다섯번째 출력", circleQueue);
+            circularQueue.Enqueue("김동민6");
+            PrtQueue("다섯번째 출력", circularQueue);
 
-            circleQueue.Dequeue();
-            PrtQueue("여섯번째 출력", circleQueue);
+            circularQueue.Dequeue();
+            PrtQueue("여섯번째 출력", circularQueue);
 
-            circleQueue.Enqueue("김동민7");
-            PrtQueue("일곱번째 출력", circleQueue);
+            circularQueue.Enqueue("김동민7");
+            PrtQueue("일곱번째 출력", circularQueue);
         }
 
-        public static void PrtQueue(string count, CircleQueue<string> circleQueue) {
+        public static void PrtQueue(string count, CircularQueue<string> circleQueue) {
             Console.WriteLine(count);
             Console.WriteLine("==============================");
             for (int idx = 0; idx < circleQueue.Length; idx++) {
