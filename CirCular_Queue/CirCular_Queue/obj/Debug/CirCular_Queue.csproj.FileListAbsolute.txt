@@ -1,0 +1,14 @@
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.csprojAssemblyReference.cache
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.csproj.CoreCompileInputs.cache
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.exe.config
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.exe
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.pdb
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.exe
+C:\Users\명지전문대\Desktop\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.pdb
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.exe.config
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.exe
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\bin\Debug\CirCular_Queue.pdb
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.csprojAssemblyReference.cache
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.csproj.CoreCompileInputs.cache
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.exe
+D:\Github\Algorithm\CirCular_Queue\CirCular_Queue\obj\Debug\CirCular_Queue.pdb
