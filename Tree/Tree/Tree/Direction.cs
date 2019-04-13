@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tree
 {
-    interface ITree<T, V>
+    public static class Direction
     {
-        bool Insert(T parent, T child, bool direction);
-        V Find(T value);
-        bool Delete(T value);
+        public static readonly bool RIGHT = false;
+        public static readonly bool LIFT = true;
     }
 }

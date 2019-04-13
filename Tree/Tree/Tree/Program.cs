@@ -10,10 +10,18 @@ namespace Tree
     {
         static void Main(string[] args)
         {
-            TreeNode<string> treeNode = new TreeNode<string>();
+            ITree<string, Node<string>> binaryTree = new BinaryTree<string>("A");
 
-            
+            binaryTree.Insert("A", "B", Direction.RIGHT);
+            binaryTree.Insert("A", "C", Direction.LIFT);
 
+            binaryTree.Delete("B");
+
+            Node<string> node = binaryTree.Find("C");
+
+            Console.WriteLine(node.Value);
+            Console.WriteLine(node.RightNode);
+            Console.WriteLine(node.LeftNode);
         }
     }
 }
