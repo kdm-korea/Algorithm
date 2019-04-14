@@ -1,48 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tree
 {
-    class BinaryTree<T> : ITree<T, Node<T>>
+    unsafe class Binarytree : ITree<int, Node>
     {
-        List<Node<T>> tree;
+        Node root;
 
-        public BinaryTree(T root) {
-            tree.Add(new Node<T> { Value = root });
+        public Binarytree(int root) {
+            this.root = new Node { data = root };
         }
 
-        public bool Delete(T value) {
-            while (true) {
-                //TODO: FinbyChildNode
-            }
+        public bool Delete(int value) {
             throw new NotImplementedException();
         }
 
-        private bool FinbyChildNode(Node<T> tree) {
-            if (tree.RightNode != default || tree.LeftNode != default) {
-                return false;
-            }
-            else {
+        public Node Find(int value) {
+            throw new NotImplementedException();
+        }
+        
+        public unsafe bool Insert(int parent, int child, bool direction) {
+            Node childNode = new Node { data = child };
+            Node* node = &childNode;
+
+            Node parentNode = Find(parent);
+            parentNode.leftLink = node;
+
+            if (direction == Direction.LIFT && root.leftLink == null) {
+                root.leftLink = node;
                 return true;
             }
+            else if(direction == Direction.RIGHT && root.rightLink == null){
+                root.rightLink = node;
+                return true;
+            }
+            else {
+                Console.WriteLine("노드에 데이터가 있습니다.");
+                return false;
+            }
         }
 
-        public Node<T> Find(T value) {
-            throw new NotImplementedException();
+        void InitalzationNode(Node node) {
+            node.data = default;
+            node.leftLink = null;
+            node.rightLink = null;
         }
+    }
 
-        /// <summary>
-        /// direction [0 = Right, 1 = Left]
-        /// </summary>
-        /// <param name="parent"></param>
-        /// <param name="child"></param>
-        /// <param name="direction"></param>
-        /// <returns></returns>
-        public bool Insert(T parent, T child, bool direction) {
-            throw new NotImplementedException();
+    class eaea
+    {
+        public void example() {
+
         }
     }
 }
