@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tree
+namespace ConsoleApp1
 {
-    interface ITree<T, V>
+    interface ITree<T, E>
     {
-        bool Insert(T parent, T child, bool direction);
-        V Find(T value);
-        bool Delete(T value);
+        bool Insert(E node, T data, Direct direct);
+        bool Delete(T data);
+        Node<T> Retreive(T data);
+        Node<T> Root();
     }
 }
