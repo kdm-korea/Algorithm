@@ -8,8 +8,7 @@ namespace Heap_Sort
 {
     interface IHeap
     {
-        bool Insert(int data);
-        bool Update(int delData, int addData);
-        bool Delete(int data);
+        void Insert(int data);
+        void Delete(int data);
     }
 }
