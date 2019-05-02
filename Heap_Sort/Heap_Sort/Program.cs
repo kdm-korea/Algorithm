@@ -11,20 +11,49 @@ namespace Heap_Sort
         static MaxinumHeap maxHeap;
 
         static void Main(string[] args) {
-            maxHeap = new MaxinumHeap(1);
+            maxHeap = new MaxinumHeap();
 
             maxHeap.Insert(10);
-            maxHeap.Insert(13);
-            maxHeap.Insert(9);
-            maxHeap.Insert(6);
-            maxHeap.Insert(1);
-            maxHeap.Insert(15);
-
-            maxHeap.Delete(10);
-
             foreach (var i in maxHeap.heap) {
-                Console.WriteLine(i);
+                Console.Write($"{i} ");
             }
+            Console.WriteLine();
+
+            maxHeap.Insert(13);
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            maxHeap.Insert(9);
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            maxHeap.Insert(6);
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            maxHeap.Insert(1);
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            maxHeap.Insert(15);
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
+
+            maxHeap.Remove();
+            foreach (var i in maxHeap.heap) {
+                Console.Write($"{i} ");
+            }
+            Console.WriteLine();
         }
     }
 }

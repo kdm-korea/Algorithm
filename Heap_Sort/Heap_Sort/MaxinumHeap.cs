@@ -1,60 +1,60 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Heap_Sort
 {
     class MaxinumHeap : IHeap
     {
-        public int[] heap = new int[] { };
-        private int rData = default, lData = default;
-        private int idx = 1;
+        public List<int> heap = new List<int>();
 
-        public MaxinumHeap(int heap) {
-            this.heap[idx] = heap;
-            idx++;
-        }
+        public void Insert(int value) {
+            heap.Add(value);
 
-        public void Delete(int data) {
-            throw new NotImplementedException();
-        }
-
-        public void Insert(int data) {
-            int tmp = idx;
-            heap[idx] = data;
-            while (tmp > 0) {
-                if(Compare(FindParent(tmp), heap[idx])) {
-                    Swap(FindParent(tmp), heap[idx]);
+            int node = heap.Count - 1;
+            while (node > 0) {
+                int parent = (node - 1) / 2;
+                if (heap[parent] < heap[node])
+                {
+                    Swap(parent, node);
+                    node = parent;
+                }
+                else {
+                    break;
                 }
             }
-            idx++;
         }
 
-        private int FindParent(int index) {
-            return (heap[index] % 2 == 1) ? heap[(index - 1) / 2] : heap[index / 2];
+        public int Remove() {
+            if (heap.Count == 0)
+                throw new InvalidOperationException();
+
+            int root = heap[0];
+
+            heap[0] = heap[heap.Count - 1];
+            heap.RemoveAt(heap.Count - 1);
+
+            int tmp = 0;
+            int last = heap.Count - 1;
+            while (tmp < last) {
+                int child = tmp * 2 + 1;
+
+                if (child < last && heap[child] < heap[child + 1])
+                    child = child + 1;
+
+                if (child > last ||heap[tmp] >= heap[child])
+                    break;
+
+                Swap(tmp, child);
+                tmp = child;
+            }
+
+            return root;
         }
 
-        private bool Compare(int fst, int sec) {
-            return (fst > sec) ? true : false;
-        }
-
-        private void Swap(int fst, int sec) {
-            int tmp = fst;
-            fst = sec;
-            sec = tmp;
-        }
-
-        //private int FindChild(int data) {
-        //    try {
-
-        //    }
-        //    catch (IndexOutOfRangeException) {
-
-        //        throw;
-        //    }
-        //}
-
-        private void InintChild() {
-            rData = default;
-            lData = default;
+        private void Swap(int parent, int Child) {
+            int tmp = heap[parent];
+            heap[parent] = heap[Child];
+            heap[Child] = tmp;
         }
     }
 }
