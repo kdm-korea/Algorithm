@@ -28,7 +28,6 @@ namespace Sort
             com.Custom_QuickSort(com.quick_SortNum);
             stopwatch.Stop();
             Console.WriteLine($"Custom quicksort timestamp :: {stopwatch.ElapsedTicks.ToString()}ms");
-
         }
 
 
