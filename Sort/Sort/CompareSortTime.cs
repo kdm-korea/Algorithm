@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Sort
@@ -11,7 +12,7 @@ namespace Sort
 
         public bool CollectRandomNumber() {
             quick_SortNum = randomNumber.Create_RandomNumber(); // Create Random Integer Number 1 ~ 100,000
-            quick_SortNum = cShap_SortNum.ToList();             // Deep copy
+            cShap_SortNum = quick_SortNum.ToList();             // Deep copy
             return true;
         }
 

@@ -11,12 +11,12 @@ namespace Sort
         static void Main(string[] args) {
             //Create 100,000 integer random number
             com.CollectRandomNumber();
-
+        
             // C# library sorting way
             stopwatch.Start();
             com.C_ShapLibrarySort(com.cShap_SortNum);
             stopwatch.Stop();
-            Console.WriteLine($"C# library sort timestamp :: {stopwatch.ElapsedTicks.ToString()}ms");
+            Console.WriteLine($"C# library sort timestamp :: {stopwatch.ElapsedMilliseconds.ToString()}ms");
 
             // Reset stopwatch
             Console.WriteLine();
@@ -27,7 +27,7 @@ namespace Sort
             stopwatch.Start();
             com.Custom_QuickSort(com.quick_SortNum);
             stopwatch.Stop();
-            Console.WriteLine($"Custom quicksort timestamp :: {stopwatch.ElapsedTicks.ToString()}ms");
+            Console.WriteLine($"Custom quicksort timestamp :: {stopwatch.ElapsedMilliseconds.ToString()}ms");
         }
 
 
